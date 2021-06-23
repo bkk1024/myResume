@@ -3,7 +3,6 @@ import pandas as pd
 import json
 import plotly
 import plotly.express as px
-
 import csv, re, operator
 # from textblob import TextBlob
 
@@ -34,11 +33,9 @@ def cb():
 def index():
 	return render_template('chartsajax.html',  graphJSON=gm())
 
-def gm(country='United Kingdom'):
-	df = pd.DataFrame(px.data.gapminder())
-
-	fig = px.line(df[df['country']==country], x="year", y="gdpPercap")
-
+def gm(type='all'):
+	df = pd.read_csv('static/data/population(1990-2014).csv')
+	fig = px.line(df, x="year", y=type)
 	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 	return graphJSON
 

@@ -6,11 +6,11 @@
   <!-- 响应式布局，viewport meta 标签 针对移动端页面进行优化 -->
   <title>二师弟的resume</title>
   <!-- 使用 flask 导入 favicon 图标 -->
-  <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}" type="image/x-icon"/>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon"/>
   <!-- 导入文件 -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <!-- 字体图标文件链接 -->
-  <link rel="stylesheet" href="{{url_for('static', filename='baseCSS/common.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='baseCSS/common.css') }}">
   <script defer src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
   <script defer src="{{ url_for('static', filename='js/myjs.js') }}"></script>
     <!-- defer属性：表示在读取完整个 html 和 css 文件后，再进行读取 js 文件。
@@ -40,7 +40,7 @@
         <div class="address"><a href="https://goo.gl/maps/fiTBGT6Vnhy"><i class="fas fa-map-marker"></i><span>{{contact.address}}</span></a>
         </div>
         <div class="email"><a href="mailto:astronaomical@gmail.com"><i class="fas fa-envelope"></i><span>{{contact.email}}</span></a></div>
-        <div class="website"><a href="http://astronaomical.com/" target="_blank"> <i class="fas fa-home"></i><span>{{contact.website}}</span></a></div>
+        <div class="website"><a href="{{ url_for('index') }}" target="_blank"> <i class="fas fa-home"></i><span>{{contact.website}}</span></a></div>
       </div>
       <div class="follow">
         <h3>Follow Me</h3>

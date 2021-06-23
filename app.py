@@ -12,7 +12,7 @@ app = Flask(__name__)
 person = {
     'name': '二师弟',
     'job': '前端开发人员',
-    'about': 'bbbbbbbbbbb',
+    'about': '性格外向开朗，对新鲜事物抱有好奇心，并热衷于学习有趣的新鲜事物，有较强的组织能力和沟通能力。',
 }
 
 contact = {

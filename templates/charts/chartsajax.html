@@ -1,0 +1,48 @@
+<!-- 人口普查折线图 -->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>chart</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='baseCSS/inputSelect.css') }}">
+<!--    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>-->
+    <script src="../../static/js/plotly-latest.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function cb(selection) {
+            $.getJSON({
+                url: "/callback", data: { 'data': selection }, success: function (result) {
+                    Plotly.newPlot('chart', result, {});;
+                }
+            });
+        }
+    </script>
+</head>
+
+<body style="font-family:arial, sans-serif">
+    <h1>1990-2014中国人口普查结果可视化展示：</h1>
+    <select onchange="cb(this.value)" class="inselect">
+        <option value="all">总人口</option>
+        <option value="man">男性总人口</option>
+        <option value="ratioMan">男性总人口占比</option>
+        <option value="woman">女性总人口</option>
+        <option value="ratioWomen">女性总人口占比</option>
+        <option value="city">城市总人口</option>
+        <option value="ratioCity">城市总人口占比</option>
+        <option value="country">农村总人口</option>
+        <option value="ratioCountry">农村总人口占比</option>
+        <option value="birthRate">出生率</option>
+        <option value="deathRate">死亡率</option>
+        <option value="naturalGrowthRate">自然增长率</option>
+    </select>
+    <div id="chart" class="chart"></div>
+</body>
+
+<script>
+    d = {{ graphJSON | safe }};
+    Plotly.newPlot('chart', d, {});
+</script>
+
+
+</html>

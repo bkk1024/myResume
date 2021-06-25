@@ -1,0 +1,21 @@
+<!-- 2013年蒙特利尔市长选举投票结果三元线条图 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chart8</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <script src="../../static/js/plotly-latest.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body style="font-family:arial, sans-serif">
+    <h1>2013年蒙特利尔市长选举投票结果可视化：</h1>
+    <div id="chart8" class="chart8"></div>
+</body>
+
+<script>
+    d = {{ graphJSON | safe }};
+    Plotly.newPlot('chart8', d, {});
+</script>
+
+</html>

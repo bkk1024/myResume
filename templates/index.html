@@ -37,10 +37,10 @@
       <div class="contact">
         <h3>Contact Me</h3>
         <div class="call"><a href="tel:123-456-7890"><i class="fas fa-phone"></i><span>{{contact.call}}</span></a></div>
-        <div class="address"><a href="https://goo.gl/maps/fiTBGT6Vnhy"><i class="fas fa-map-marker"></i><span>{{contact.address}}</span></a>
+        <div class="address"><a href="{{ url_for('select') }}"><i class="fas fa-map-marker"></i><span>{{contact.address}}</span></a>
         </div>
         <div class="email"><a href="mailto:astronaomical@gmail.com"><i class="fas fa-envelope"></i><span>{{contact.email}}</span></a></div>
-        <div class="website"><a href="{{ url_for('index') }}" target="_blank"> <i class="fas fa-home"></i><span>{{contact.website}}</span></a></div>
+        <div class="website"><a href="#" target="_blank"> <i class="fas fa-home"></i><span>{{contact.website}}</span></a></div>
       </div>
       <div class="follow">
         <h3>Follow Me</h3>

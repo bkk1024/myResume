@@ -1,4 +1,4 @@
-year,all,man,ratioMan,woman,ratioWomen,city,ratioCity,country,ratioCountry,birthRate,deathRate,naturalGrowthRate,,
+year,all(W),man(W),ratioMan(%),woman(W),ratioWomen(%),city(W),ratioCity(%),country(W),ratioCountry(%),birthRate(%),deathRate(%),naturalGrowthRate(%),,
 1990,114333,58904,51.52,55429,48.48,30195,26.41,84138,73.59,21.06 ,6.67 ,14.39 ,,
 1991,115823,59466,51.34,56357,48.66,31203,26.94,84620,73.06,19.68 ,6.70 ,12.98 ,,
 1992,117171,59811,51.05,57360,48.95,32175,27.46,84996,72.54,18.24 ,6.64 ,11.60 ,,

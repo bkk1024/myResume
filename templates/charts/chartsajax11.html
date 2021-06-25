@@ -1,0 +1,36 @@
+<!-- 动画地图 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chart10</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='baseCSS/inputSelect.css') }}">
+    <script src="../../static/js/plotly-latest.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function cb11(selection) {
+            $.getJSON({
+                url: "/callback11", data: { 'data': selection }, success: function (result) {
+                    Plotly.newPlot('chart11', result, {});;
+                }
+            });
+        }
+    </script>
+</head>
+<body style="font-family:arial, sans-serif">
+    <h1>堆积区域图：</h1>
+    <select onchange="cb11(this.value)" class="inselect">
+        <option value="lifeExp">平均寿命</option>
+        <option value="pop">人口</option>
+        <option value="gdpPercap">GDP</option>
+    </select>
+    <div id="chart11" class="chart11"></div>
+</body>
+
+<script>
+    d = {{ graphJSON | safe }};
+    Plotly.newPlot('chart11', d, {});
+</script>
+
+</html>

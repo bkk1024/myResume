@@ -1,0 +1,21 @@
+<!-- 人口普查折线图 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chart3</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <script src="../../static/js/plotly-latest.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body style="font-family:arial, sans-serif">
+    <h1>三种类型的花的萼片或花瓣长宽数据可视化：</h1>
+    <div id="chart3" class="chart3"></div>
+</body>
+
+<script>
+    d = {{ graphJSON | safe }};
+    Plotly.newPlot('chart3', d, {});
+</script>
+
+</html>

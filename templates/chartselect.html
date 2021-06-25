@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择不同的可视化图形</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='baseCSS/forchartselect.css') }}">
+    <script defer src="{{ url_for('static', filename='js/chartselect.js') }}"></script>
+</head>
+<body>
+    <ul class="select">
+        <li id="a1" class="li1 li2" onclick="change(this.id)"><a class="a1 a2" href="{{ url_for('index') }}" target="show">折线图</a></li>
+        <li id="a2" class="li1" onclick="change(this.id)"><a class="a1" href="{{ url_for('index1') }}" target="show">散点图</a></li>
+        <li id="a3" class="li1" onclick="change(this.id)"><a class="a1" href="{{ url_for('index3') }}" target="show">平行坐标图</a></li>
+        <li id="a4" class="li1" onclick="change(this.id)"><a class="a1" href="{{ url_for('index2') }}" target="show">散点极坐标图</a></li>
+        <li id="a5" class="li1" onclick="change(this.id)"><a class="a1" href="{{ url_for('index4') }}" target="show">并行类别图</a></li>
+        <li id="a6" class="li1" onclick="change(this.id)"><a class="a1" href="{{ url_for('index5') }}" target="show">矩阵散点图</a></li>
+        <li id="a7" class="li1" onclick="change(this.id)"><a class="a1" href="{{ url_for('index6') }}" target="show">密度等值线图</a></li>
+        <li id="a8" class="li1" onclick="change(this.id)"><a class="a1" href="{{ url_for('index7') }}" target="show">堆积类型条形图</a></li>
+        <li id="a9" class="li1" onclick="change(this.id)"><a class="a1" href="{{ url_for('index8') }}" target="show">三元线条图</a></li>
+        <li id="a10" class="li1" onclick="change(this.id)"><a class="a1" href="{{ url_for('index9') }}" target="show">三维散点图</a></li>
+        <li id="a11" class="li1" onclick="change(this.id)"><a class="a1" href="{{ url_for('index10') }}" target="show">动画地图</a></li>
+        <li id="a12" class="li1" onclick="change(this.id)"><a class="a1" href="{{ url_for('index11') }}" target="show">堆积区域图</a></li>
+    </ul>
+    <iframe class="show" name="show" src="{{ url_for('index') }}" frameborder="0"></iframe>
+</body>
+</html>

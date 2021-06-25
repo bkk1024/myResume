@@ -1,0 +1,9 @@
+.inselect {
+    display: block;
+    margin-bottom: 20px;
+    width: 150px;
+    height: 30px;
+    border-width: 0 0 2px 0;
+    background-color: #ecf0f1;
+    outline: none;
+}

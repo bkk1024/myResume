@@ -7,3 +7,7 @@
     background-color: #ecf0f1;
     outline: none;
 }
+
+.inselect option {
+    height: 30px;
+}

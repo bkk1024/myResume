@@ -57,8 +57,8 @@ body {
     box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.37 );
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
-    transform: rotateY(15deg);
-	-webkit-transform: rotateY(15deg); /* Safari and Chrome */
+    transform: rotateY(25deg);
+	-webkit-transform: rotateY(25deg) translateZ(0); /* Safari and Chrome */
 }
 
 .select li:hover a {
@@ -74,16 +74,19 @@ body {
 
 .a2 {
     min-width: 130px;
-    max-width: 150px;
-    font-size: 20px;
+    max-width: 180px;
+    font-size: 25px;
     font-weight: 700;
     padding: 8px;
     color: #ffffff;
     background-color: #34495e;
     border-radius: 15px 15px 0 0;
-    transition: all 0.5s ease-out;
+    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
     transform: rotateY(0deg);
 	-webkit-transform: rotateY(0deg); /* Safari and Chrome */
+    transition: all 0.5s ease-out;
 }
 
 .show {

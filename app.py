@@ -21,9 +21,13 @@ contact = {
     'website': 'ershdi.com',
 }
 
+flower = {
+
+}
+
 @app.route('/')
 def cv(person=person):
-    return render_template('index.html', person = person, contact = contact)
+    return render_template('index.html', person = person, contact = contact, flower = flower)
 
 # 跳转到选择界面
 @app.route('/select')

@@ -24,6 +24,6 @@
         <li id="a11" class="li1" onclick="change(this.id)"><a class="a1" href="{{ url_for('index10') }}" target="show">动画地图</a></li>
         <li id="a12" class="li1" onclick="change(this.id)"><a class="a1" href="{{ url_for('index11') }}" target="show">堆积区域图</a></li>
     </ul>
-    <iframe class="show" name="show" src="{{ url_for('index') }}" frameborder="0"></iframe>
+    <iframe onload="iframeShow(this.contentWindow.location.href)" class="show" name="show" src="{{ url_for('index') }}" frameborder="0"></iframe>
 </body>
 </html>

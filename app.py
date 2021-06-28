@@ -16,9 +16,9 @@ person = {
 
 contact = {
     'call': '19172919646',
-    'address': '点我点我',
+    'address': '可视化图表',
     'email': 'ershidi@qq.com',
-    'website': 'ershdi.com',
+    'website': '品优购商城',
 }
 
 flower = {
@@ -33,6 +33,11 @@ def cv(person=person):
 @app.route('/select')
 def select():
 	return render_template('chartselect.html')
+
+# 商城页面首页
+@app.route('/shopping')
+def shopping():
+	return render_template('shopping/index.html')
 
 # 人口普查的折线图
 @app.route('/callback', methods=['POST', 'GET'])

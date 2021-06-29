@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='shopping/css/common.css') }}">
     <!-- 引入index首页的样式文件  -->
     <link rel="stylesheet" href="{{ url_for('static', filename='shopping/css/index.css') }}">
+    <!-- 导入轮播图的 js 文件 -->
+    <script defer src="{{ url_for('static', filename='shopping/js/base.js') }}"></script>
 </head>
 
 <body>
@@ -146,7 +148,24 @@
     <!-- nav 导航模块 end -->
     <!--  首页模块 start -->
     <div class="w main">
-        <div class="focus"></div>
+        <div class="focus">
+            <ul class="box">
+                <li><img src=" {{ url_for('static', filename='shopping/img/1.jpg') }} " alt="图片无法显示"></li>
+                <li><img src=" {{ url_for('static', filename='shopping/img/2.jpg') }} " alt="图片无法显示"></li>
+                <li><img src=" {{ url_for('static', filename='shopping/img/4.jpg') }} " alt="图片无法显示"></li>
+                <li><img src=" {{ url_for('static', filename='shopping/img/5.jpg') }} " alt="图片无法显示"></li>
+                <li><img src=" {{ url_for('static', filename='shopping/img/6.jpg') }} " alt="图片无法显示"></li>
+            </ul>
+            <ul class="point">
+                <li class="select" data-index="0"></li>
+                <li data-index="1"></li>
+                <li data-index="2"></li>
+                <li data-index="3"></li>
+                <li data-index="4"></li>
+            </ul>
+            <div class="prev">&lt</div>
+            <div class="next">&gt</div>
+        </div>
         <div class="newsflash">
             <div class="news">
                 <div class="news_name">

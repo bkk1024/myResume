@@ -21,13 +21,9 @@ contact = {
     'website': '品优购商城',
 }
 
-flower = {
-
-}
-
 @app.route('/')
 def cv(person=person):
-    return render_template('index.html', person = person, contact = contact, flower = flower)
+    return render_template('index.html', person = person, contact = contact)
 
 # 跳转到选择界面
 @app.route('/select')
@@ -135,10 +131,14 @@ def gm6(type = 'time_size'):
 		fig = px.density_contour(df, x="time", y="size")
 	if type == 'time_totalBill':
 		fig = px.density_contour(df, x="time", y="total_bill")
+	if type == 'time_tip':
+		fig = px.density_contour(df, x="time", y="tip")
 	if type == 'day_size':
 		fig = px.density_contour(df, x="day", y="size")
 	if type == 'day_totalBill':
 		fig = px.density_contour(df, x="day", y="total_bill")
+	if type == 'day_tip':
+		fig = px.density_contour(df, x="day", y="tip")
 	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 	return graphJSON
 
@@ -160,7 +160,9 @@ def index8():
 
 def gm8():
 	df = pd.read_csv('static/data/election.csv')
-	fig = px.line_ternary(df, a="Joly", b="Coderre", c="Bergeron", color="winner", line_dash="winner")
+	fig = px.scatter_ternary(df, a="Joly", b="Coderre", c="Bergeron", color="winner", size="total",
+	                   hover_name="district", size_max=15, color_discrete_map={"Joly": "blue",
+	                                                    "Bergeron": "green", "Coderre": "red"})
 	graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 	return graphJSON
 
